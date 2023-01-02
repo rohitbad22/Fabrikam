@@ -1,0 +1,95 @@
+2.Sudo yum install docker
+3.Create git repository
+4.Create Local Repository /create folder
+git clone URL
+------------------------------------------
+5.cd Repo name
+npm init
+code .
+
+Create public folder
+create index.html
+create file in project server.js
+create Dockerfile
+--------------------------------------
+npm install express
+
+npm install body-parser
+-------------------------------------
+In Docker file
+-------------------------------------
+FROM node
+WORKDIR /app
+COPY package.json /app
+RUN npm install 
+COPY . /app
+CMD node server.js
+Expose 3000
+--------------------------------------------
+Terminal click on + sign select git bash
+
+$ touch .gitignore
+ in git ignore 
+/node_modules
+
+----------------------------------------------------
+Open Index
+
+create Boiler Plate
+Basic Atleast Enter Title
+-----------------------------------------------------
+Open Server.js
+
+
+type 
+-----------------------------------------------------
+const express = require('express');
+
+var app = express();
+var bodyparser = require ('body-parser');
+app.use(bodyparser.urlencoded({extended:false}));
+
+app.get('/',function(req,res){
+    res.sendFile("public/index.html",{root:__dirname})
+});
+
+app.listen(3000);
+
+console.log("Server Running on port 3000");
+-------------------------------------------------------------
+test=node server.js
+-----------------------------------------------------
+7.cmd
+git status
+git add .
+git status
+git commit -m "First Commit"
+8.git push
+----------------------------------------
+
+9.sudo yum install git
+y
+
+-----------------------------------------
+10.git clone URL
+ls
+cd <enter Folder>
+--------------------------------
+11.
+$ sudo systemctl status docker
+ sudo systemctl start docker
+ sudo systemctl enable docker
+ sudo docker images
+
+ sudo docker build -t <name> .
+  wait
+
+sudo docker run -d -p 3000:3000 fabimg
+sudo docker ps
+
+
+--------------------------------------------
+security rules 
+-------------------------------------------
+visit port
+----------------------------------------
